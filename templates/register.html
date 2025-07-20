@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- Correct Stylesheet Links for Glide.js -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+        <title>AIU ECOMMERCE</title>
+        
+</head>
+<body>
+
+    <!-- Registration Section -->
+    <section class="register__header hidden" id="register-section">
+        <div class="register-input">
+            <h2>Register</h2>
+            <!-- Customer Registration Form -->
+            <form action="/register/customer" method="POST" id="customer-form" class="hidden">
+                <label for="reg-username">Username</label>
+                <input type="text" id="reg-username-customer" name="username" placeholder="username" required>
+                <label for="email">Email</label>
+                <input type="email" id="email-customer" name="email" placeholder="email@example.com" required>
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password-customer" name="password" placeholder="password" required>
+                <button class="btn btn--secondary" type="submit">Register as Customer</button>
+            </form>
+    
+            <!-- Seller Registration Form -->
+            <form action="/register/seller" method="POST" id="seller-form" class="hidden">
+                <label for="reg-username">Username</label>
+                <input type="text" id="reg-username-seller" name="username" placeholder="username" required>
+                <label for="email">Email</label>
+                <input type="email" id="email-seller" name="email" placeholder="email@example.com" required>
+                <label for="reg-password">Password</label>
+                <input type="password" id="reg-password-seller" name="password" placeholder="password" required>
+                <button class="btn btn--secondary" type="submit">Register as Seller</button>
+            </form>
+    
+            <button class="btn btn--primary" id="back-to-login">Back to Login</button>
+        </div>
+    </section>
+    
+</body>
+</html>

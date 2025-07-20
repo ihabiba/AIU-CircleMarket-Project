@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+        <title>AIU E-COMMERCE</title>
+    </head>
+    <body>
+    <!-- header-->
+        <header class="header" id="header">
+            <div class="top-nav">
+                <div class="container d-flex">
+                    <p>Order Online or Call us: (060) 194840468</p>
+                    <ul class="d-flex">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- navigation-->
+                <div class="navigation">
+                <div class="nav-center container d-flex">
+                    <a href="" class="logo"><h1>AIU <span>E-SHOP</span></h1></a>
+                    <ul class="nav-list d-flex">
+                        <li class="nav-item"><a href="index.html" class="nav-link">My dashboard</a></li>
+                        <li class="icons d-flex">
+                            <a href="login.html" class="icon"><i class='bx bxs-user'></i></a>
+                        <div class="icon"><i class='bx bx-search'></i></div>
+                        <div class="icon"><i class='bx bx-heart'></i>
+                            <span class="d-flex">0</span>
+                        </div>
+                        <a href="cart.html" class="icon"><i class='bx bxs-cart'></i>
+                            <span class="d-flex">0</span>
+                        </a>
+                        </li>
+                    </ul>
+                    <div class="icons d-flex">
+                        <a href="{{ url_for('profile') }}" class="icon"><i class='bx bxs-user'></i></a>
+                        <div class="icon"><i class='bx bx-search'></i></div>
+                        <div class="icon"><i class='bx bx-heart'></i>
+                            <span class="d-flex">0</span>
+                        </div>
+                        <a href="{{ url_for('cart') }}" class="icon"><i class='bx bxs-cart'></i>
+                            <span class="d-flex">0</span>
+                        </a>
+                    </div>
+                    <!--hamburger-->
+                    <div class="hamburger">
+                        <i class='bx bx-menu-alt-left'></i>
+                    </div>
+                </div>
+                </div>
+            
+            <!--/dashboard-->
+            <div class="dashboard">
+                <div class="container">
+                    <h2>My Store Dashboard</h2>
+                    <div class="options">
+                        <a id="add-product-link" href="#" class="option">Add Product</a>
+                        <a href="{{ url_for('view_orders') }}" class="option">View Orders</a>
+                        <a href="{{ url_for('edit_product') }}" class="option">Edit Products</a>
+                        <a href="#" class="option">Remove Product</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form_add_product" id="add_product" style="display: none;">
+                <form class="add_product" action="{{ url_for('add_product') }}" method="POST">
+                    <h2>Add the product</h2>
+                    <input id="product-name" name="product-name" type="text" placeholder="Product name" required><br>
+                    <input id="description" name="description" type="text" placeholder="Product description" required><br>
+                    <input id="product-price" name="product-price" type="text" placeholder="Product price" required><br>
+                    <input id="product-image-url" name="product-image-url" type="text" placeholder="Image URL" required><br>
+                    <button id="add-product" type="submit">Add product</button>
+                </form>
+            </div>
+        </header>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const addProductLink = document.getElementById('add-product-link');
+                const productForm = document.getElementById('product-form');
+            
+                if (addProductLink && productForm) {
+                    addProductLink.addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent the default anchor click behavior
+                        // Check current display style and toggle it
+                        if (productForm.style.display === 'none' || productForm.style.display === '') {
+                            productForm.style.display = 'block';
+                        } else {
+                            productForm.style.display = 'none';
+                        }
+                    });
+                } else {
+                    console.error('Required elements are missing: "add-product-link" or "product-form".');
+                }
+            });
+        </script>
+        
+    <script src="../static/js/dashboard.js"></script>
+    <script src="../static/js/slider.js"></script>
+    <script src="../static/js/main.js"></script>
+
+    </body>
+</html>

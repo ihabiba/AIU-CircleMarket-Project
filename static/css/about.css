@@ -1,0 +1,186 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.team {
+    padding: 50px 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.container-team {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.row {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.row h1 {
+    font-size: 4rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.row p {
+    font-size: 2rem;
+    margin: 20px 0 0;
+    padding-left: 20px;
+    border-left: 5px solid orange;
+}
+
+.mgt50px {
+    margin-top: 50px;
+}
+
+.row .column {
+    margin: 0 10px;
+    position: relative;
+    background: black;
+    width: calc(25% - 20px);
+    float: left;
+    min-height: 250px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.row .column::before {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: bottom .5s;
+    mix-blend-mode: soft-light;
+}
+
+.row .column:hover::before {
+    bottom: 0;
+}
+
+.row .column .imgBox {
+    position: relative;
+    height: fit-content;
+}
+
+.row .column .imgBox img {
+    width: 100%;
+    transition: 2s;
+}
+
+.row .column:hover .imgBox img {
+    transform: scale(1.5);
+}
+
+.row .column .member-details {
+    position: absolute;
+    bottom: -85px;
+    left: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    box-sizing: border-box;
+    transition: .5s;
+    z-index: 2;
+}
+
+.row .column:hover .member-details {
+    bottom: 0;
+}
+
+.row .column .member-details h3 {
+    color: white;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.row .column .member-details h3 span {
+    color: orange;
+    margin: 0;
+    padding-top: 1rem;
+    position: relative;
+    text-transform: uppercase;
+    top: -6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .row .column {
+        width: calc(33.33% - 20px);
+    }
+
+    .row h1 {
+        font-size: 3.5rem;
+    }
+
+    .row p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .row .column {
+        width: calc(50% - 20px);
+    }
+
+    .row h1 {
+        font-size: 3rem;
+    }
+
+    .row p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .row .column {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container-team {
+        width: 90%;
+    }
+
+    .row h1 {
+        font-size: 2.5rem;
+    }
+
+    .row p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team {
+        padding: 30px 0;
+    }
+
+    .row h1 {
+        font-size: 2rem;
+    }
+
+    .row p {
+        font-size: 1rem;
+    }
+
+    .row .column {
+        min-height: 200px;
+    }
+
+    .row .column .member-details h3 {
+        font-size: 1.2rem;
+    }
+}

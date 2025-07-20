@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <div class="card">
+            <div class="card-left">
+                <img src="static/images/hero1.png" alt="Hero Image">
+                <div class="buttons">
+                    <a href="#">Register</a>
+                    <a href="#">Login</a>
+                </div>
+            </div>
+            <div class="card-right">
+                <h1>Fill Out Your Personal Information</h1>
+                <form>
+                    <fieldset>
+                        <label for="name">First Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" required><br><br>
+                        
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="0" required><br><br>
+                        
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" name="country" required><br><br>
+                        
+                        <button type="submit">Save</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.theme.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js"></script>
+    <script type="module" src="../static/js/main.js" defer ></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/about.css">
+    <title>AIU ECORMERCE </title>
+</head>
+<body>
+    <!-- header-->
+     <header class="header" id="header">
+        <div class="top-nav">
+            <div class="container d-flex">
+                <p>Order Online or Call us: (060) 194840468</p>
+                <ul class="d-flex">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- navigation-->
+        <div class="navigation">
+            <div class="nav-center container d-flex">
+                <a href="" class="logo"><h1>AIU <span>E-SHOP</span></h1></a>
+                <ul class="nav-list d-flex">
+                    <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
+                    <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About us</a></li>
+                    <li class="icons d-flex">
+                        <a href="login.html" class="icon"><i class='bx bxs-user'></i></a>
+                    <div class="icon"><i class='bx bx-search'></i></div>
+                    <div class="icon"><i class='bx bx-heart'></i>
+                        <span class="d-flex">0</span>
+                    </div>
+                    <a href="cart.html" class="icon"><i class='bx bxs-cart'></i>
+                        <span id="cart-count" class="d-flex">0</span>
+                    </a>
+                    </li>
+                </ul>
+                <div class="icons d-flex">
+                    <a href="{{ url_for('login') }}" class="icon"><i class='bx bxs-user'></i></a>
+                    <div class="icon"><i class='bx bx-search'></i></div>
+                    <div class="icon"><i class='bx bx-heart'></i>
+                        <span class="d-flex">0</span>
+                    </div>
+                    <a href="{{ url_for('cart') }}" class="icon"><i class='bx bxs-cart'></i>
+                        <span id="cart-count" class="d-flex">0</span>
+                    </a>
+                </div>
+                <!--hamburger-->
+                <div class="hamburger">
+                    <i class='bx bx-menu-alt-left'></i>
+                </div>
+            </div>
+        </div>
+        <!--Our team-->
+        <section class="team">
+            <div class="container-team">
+                <div class="row">
+                    <h1 class="text-center">Our Team</h1>
+                    <p>We are the team that develop this software based our different skills starting from the designing
+                        to the development and testing
+                        and validation and we are proud that we have something amazing like this.
+                    </p>
+                </div>
+                <div class="row mgt50px" id="cona">
+                    <div class="column">
+                        <div class="imgBox">
+                            <img src="../static/images/thierno.png" alt="Team Member 1">
+                        </div>
+                        <div class="member-details">
+                            <h3>Thierno Madiou<br><span>Project Manager</span></h3>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="imgBox">
+                            <img src="../static/images/hana.jpg" alt="Team Member 1">
+                        </div>
+                        <div class="member-details">
+                            <h3>Hanaa Altaha<br><span>Porject Member</span></h3>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="imgBox">
+                            <img src="../static/images/habiba.jpg" alt="Team Member 1">
+                        </div>
+                        <div class="member-details">
+                            <h3>Habiba<br><span>Project Member</span></h3>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="imgBox">
+                            <img src="../static/images/menia.jpg" alt="Team Member 1">
+                        </div>
+                        <div class="member-details">
+                            <h3>Menia<br><span>Project Member</span></h3>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="imgBox">
+                            <img src="images/member1.jpg" alt="Team Member 1">
+                        </div>
+                        <div class="member-details">
+                            <h3>Alhassani<br><span>Project Member</span></h3>
+                        </div>
+                    </div>
+                <div style="clear: both;"></div>
+                </div>
+            </div>
+        </section>
+        </header>
+    </body>

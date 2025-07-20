@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/cart.css">
+    <title>AIU E-COMMERCE</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="top-nav">
+            <div class="container d-flex">
+                <p>Order Online or Call us: (060) 194840468</p>
+                <ul class="d-flex">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Navigation -->
+        <div class="navigation">
+            <div class="nav-center container d-flex">
+                <a href="" class="logo"><h1>AIU <span>E-SHOP</span></h1></a>
+                <ul class="nav-list d-flex">
+                    <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ url_for('shop') }}" class="nav-link">Shop</a></li>
+                    <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About us</a></li>
+                    <li class="icons d-flex">
+                        <a href="{{ url_for('login') }}" class="icon"><i class='bx bxs-user'></i></a>
+                        <div class="icon"><i class='bx bx-search'></i></div>
+                        <div class="icon"><i class='bx bx-heart'></i>
+                            <span class="d-flex">0</span>
+                        </div>
+                        <a href="{{ url_for('cart') }}" class="icon"><i class='bx bxs-cart'></i>
+                            <span class="d-flex">0</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="icons d-flex">
+                    <a href="{{ url_for('profile') }}" class="icon"><i class='bx bxs-user'></i></a>
+                    <div class="icon"><i class='bx bx-search'></i></div>
+                    <div class="icon"><i class='bx bx-heart'></i>
+                        <span class="d-flex">0</span>
+                    </div>
+                    <a href="{{ url_for('cart') }}" class="icon"><i class='bx bxs-cart '></i>
+                        <span id="cart-count" class="d-flex">0</span>
+                    </a>
+                </div>
+                <!-- Hamburger -->
+                <div class="hamburger">
+                    <i class='bx bx-menu-alt-left'></i>
+                </div>
+            </div>
+        </div>
+    <div class="cart-section">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+                {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>RM{{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>RM{{ item.price * item.quantity }}</td>
+                    <td><button class="btn btn-danger" onclick="removeItem('{{ item.id }}')">Remove</button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div id="order-status" style="display: none; color: green; font-weight: bold; margin-top: 20px;">
+            Your order is pending. Thank you for your purchase!
+        </div>
+    <div class="coup-sum col-lg-4">
+        <div class="coupon-box">
+            <input type="text" class="form-control" placeholder="Coupon Code">
+            <button class="btn btn-primary">Apply Coupon</button>
+        </div>
+        <div class="cart-summary">
+            <h5 class="summary-title">Cart Summary</h5>
+            <div class="summary-content">
+                <div class="d-flex sumCp justify-content-between">
+                    <span>Subtotal</span>
+                    <span id="subtotal">RM{{ total_amount }}</span>
+                </div>
+                <div class="d-flex sumCp justify-content-between">
+                    <span>Shipping</span>
+                    <span id="shipping-cost">RM0.00</span>
+                </div>
+                <div class="d-flex sumCp justify-content-between total">
+                    <span>Total</span>
+                    <span id="total">RM{{ total_amount }}</span>
+                </div>
+                <button class="btn btn-primary" id="checkoutButton">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required><br>
+
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" name="student-id" required><br>
+
+                <label for="hostel-block">Hostel Block:</label>
+                <input type="text" id="hostel-block" name="hostel-block" required><br>
+
+                <label for="room-number">Room Number:</label>
+                <input type="text" id="room-number" name="room-number" required><br>
+
+                <label for="payment-category">Payment Category:</label>
+                <input type="text" id="payment-category" name="payment-category" value="Cash" readonly required><br>
+
+                <input type="hidden" id="total-amount" name="total-amount" value="{{ total_amount }}">
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+    
+</header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.js"></script>
+    <script src="../static/js/cart.js"></script>
+</body>
+</html>
