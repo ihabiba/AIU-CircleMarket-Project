@@ -29,3 +29,4 @@ tzdata==2025.2
 virtualenv==20.31.2
 Werkzeug==3.0.4
 wheel==0.44.0
+gunicorn
