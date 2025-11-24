@@ -107,22 +107,22 @@ A **4-layer architecture** used in the report:
 <img src="Diagrams/activity%20diagram.png" width="600">
 
 ### 🔄 Sequence Diagram – Customer
-<img src="Diagrams/customer%20sequence%20diagram.png" width="500">
+<img src="Diagrams/customer%20sequence%20diagram.png" width="450">
 
 ### 🛍️ Sequence Diagram – Seller
-<img src="Diagrams/seller%20sequence%20diagram.png" width="500">
+<img src="Diagrams/seller%20sequence%20diagram.png" width="450">
 
 ### 🛡️ Sequence Diagram – Admin
-<img src="Diagrams/admin%20sequence%20diagram.png" width="500">
+<img src="Diagrams/admin%20sequence%20diagram.png" width="450">
 
 ### 🔁 State Machine – Customer
-<img src="Diagrams/customer%20state%20diagram.png" width="500">
+<img src="Diagrams/customer%20state%20diagram.png" width="450">
 
 ### 🔁 State Machine – Seller
-<img src="Diagrams/seller%20state%20diagram.png" width="500">
+<img src="Diagrams/seller%20state%20diagram.png" width="450">
 
 ### 🏗️ System Architecture
-<img src="Diagrams/architecture%20design.png" width="500">
+<img src="Diagrams/architecture%20design.png" width="450">
 ---
 
 ## 📂 Project Structure
