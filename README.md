@@ -101,28 +101,28 @@ A **4-layer architecture** used in the report:
 ## 🖼️ UML & Architecture Diagrams
 
 ### 📘 Use Case Diagram
-![Use Case](Diagrams/use%20case%20diagram.png)
+<img src="Diagrams/use%20case%20diagram.png" width="600">
 
 ### 🧭 Activity Diagram
-![Activity Diagram](Diagrams/activity%20diagram.png)
+<img src="Diagrams/activity%20diagram.png" width="600">
 
 ### 🔄 Sequence Diagram – Customer
-![Customer Sequence](Diagrams/customer%20sequence%20diagram.png)
+<img src="Diagrams/customer%20sequence%20diagram.png" width="600">
 
 ### 🛍️ Sequence Diagram – Seller
-![Seller Sequence](Diagrams/seller%20sequence%20diagram.png)
+<img src="Diagrams/seller%20sequence%20diagram.png" width="600">
 
 ### 🛡️ Sequence Diagram – Admin
-![Admin Sequence](Diagrams/admin%20sequence%20diagram.png)
+<img src="Diagrams/admin%20sequence%20diagram.png" width="600">
 
 ### 🔁 State Machine – Customer
-![Customer State](Diagrams/customer%20state%20diagram.png)
+<img src="Diagrams/customer%20state%20diagram.png" width="600">
 
 ### 🔁 State Machine – Seller
-![Seller State](Diagrams/seller%20state%20diagram.png)
+<img src="Diagrams/seller%20state%20diagram.png" width="600">
 
-### 🏗️ System Architecture (4-Layer Design)
-![Architecture](Diagrams/architecture%20design.png)
+### 🏗️ System Architecture
+<img src="Diagrams/architecture%20design.png" width="600">
 ---
 
 ## 📂 Project Structure
