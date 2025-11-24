@@ -9,7 +9,7 @@ The platform connects buyers and sellers on campus, offering an organized and co
 
 ## 📌 Project Overview
 
-- 🎓 Developed as a **group Software Engineering project**
+- 🎓 Developed as a **Software Engineering project**
 - 🛍️ Designed to promote **student entrepreneurship**
 - 🌱 Supports **SDG 9** – *Industry, Innovation & Infrastructure*
 
