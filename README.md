@@ -98,6 +98,32 @@ A **4-layer architecture** used in the report:
 - **Version Control**: Git & GitHub  
 
 ---
+## 🖼️ UML & Architecture Diagrams
+
+### 📘 Use Case Diagram
+![Use Case](Diagrams/use%20case%20diagram.png)
+
+### 🧭 Activity Diagram
+![Activity Diagram](Diagrams/activity%20diagram.png)
+
+### 🔄 Sequence Diagram – Customer
+![Customer Sequence](Diagrams/customer%20sequence%20diagram.png)
+
+### 🛍️ Sequence Diagram – Seller
+![Seller Sequence](Diagrams/seller%20sequence%20diagram.png)
+
+### 🛡️ Sequence Diagram – Admin
+![Admin Sequence](Diagrams/admin%20sequence%20diagram.png)
+
+### 🔁 State Machine – Customer
+![Customer State](Diagrams/customer%20state%20diagram.png)
+
+### 🔁 State Machine – Seller
+![Seller State](Diagrams/seller%20state%20diagram.png)
+
+### 🏗️ System Architecture (4-Layer Design)
+![Architecture](Diagrams/architecture%20design.png)
+---
 
 ## 📂 Project Structure
 
